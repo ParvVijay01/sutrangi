@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570624026611",
+    "project_id": "sutrangi-db975",
+    "storage_bucket": "sutrangi-db975.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570624026611:android:411cd580b952f1d9c59486",
+        "android_client_info": {
+          "package_name": "com.sutrangi.customer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDHwdkxTH2szI5_qHlhqGXte3YILAumSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
