@@ -7,7 +7,11 @@ class AppConstants {
   static const double appVersion = 7.4;
   static const AppMode appMode = AppMode.release;
   static const String fontFamily = 'Exo';
+<<<<<<< HEAD
   static const String baseUrl = 'https://sutrangi.in/admin';
+=======
+  static const String baseUrl = 'https://sutrangi.in/admin/admin';
+>>>>>>> f6ba2fcd8c522daa8299b79f7fa3c59ce7266449
   static const String categoryUri = '/api/v1/categories';
   static const String bannerUri = '/api/v1/banners';
   static const String latestProductUri = '/api/v1/products/latest';

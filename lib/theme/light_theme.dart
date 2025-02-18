@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 
 ThemeData light = ThemeData(
   fontFamily: AppConstants.fontFamily,
+<<<<<<< HEAD
   primaryColor: const Color(0xFF0c7372),
   secondaryHeaderColor: const Color(0xFF0c7372),
+=======
+  primaryColor: const Color(0xFF562E9C),
+  secondaryHeaderColor: const Color(0xFFEFE6FE),
+>>>>>>> f6ba2fcd8c522daa8299b79f7fa3c59ce7266449
   brightness: Brightness.light,
   cardColor: Colors.white,
   focusColor: const Color(0xFFC3CAD9),
@@ -16,8 +21,13 @@ ThemeData light = ThemeData(
   dialogTheme: const DialogTheme(surfaceTintColor: Colors.white),
   colorScheme: ColorScheme(
     brightness: Brightness.light,
+<<<<<<< HEAD
     primary: const Color(0xFF0c7372),
     onPrimary: const Color(0xFF0c7372),
+=======
+    primary: const Color(0xFF562E9C),
+    onPrimary: const Color(0xFF562E9C),
+>>>>>>> f6ba2fcd8c522daa8299b79f7fa3c59ce7266449
     secondary: const Color(0xFFEFE6FE),
     onSecondary: const Color(0xFFEFE6FE),
     error: Colors.redAccent,
