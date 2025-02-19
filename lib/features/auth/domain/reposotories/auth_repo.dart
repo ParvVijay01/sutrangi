@@ -103,8 +103,8 @@ class AuthRepo {
   }
 
   Future<void> subscribeTokenToTopic(token, topic) async {
-    print("Topic ===>> $topic");
-    print("Token ===>> $token");
+    debugPrint("Topic ===>> $topic");
+    debugPrint("Token ===>> $token");
     await dioClient?.post(AppConstants.subscribeToTopic, data: {"token": '$token', "topic": topic});
   }
 
@@ -114,7 +114,7 @@ class AuthRepo {
       deviceToken = (await FirebaseMessaging.instance.getToken())!;
 
     }catch(error){
-      debugPrint('eroor ====> $error');
+      debugPrint('error ====> $error');
     }
     if (deviceToken != null) {
       debugPrint('--------Device Token---------- $deviceToken');
@@ -126,7 +126,7 @@ class AuthRepo {
   // for forgot password email
   Future<ApiResponseModel> forgetPassword(String userInput, String type) async {
 
-    print("------------(FORGET API)-----------$userInput and $type}");
+    debugPrint("------------(FORGET API)-----------$userInput and $type}");
 
     try {
       Response response = await dioClient!.post(AppConstants.forgetPasswordUri, data: {"email_or_phone": userInput, "type": type});
