@@ -12,6 +12,7 @@ const rubikMedium = TextStyle(
   fontFamily: AppConstants.fontFamily,
   fontSize: Dimensions.fontSizeDefault,
   fontWeight: FontWeight.w500,
+
 );
 
 const rubikSemiBold = TextStyle(

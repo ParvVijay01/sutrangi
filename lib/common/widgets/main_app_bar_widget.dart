@@ -31,7 +31,7 @@ class MainAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             ),
             const MenuBarWidget(),
           ],
-        )
+        ),
       ),
     );
   }

@@ -114,9 +114,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          ProductImageWidget(
-                                              productModel:
-                                                  productProvider.product),
+                                          InteractiveViewer(
+                                            minScale: 1.0,
+                                            maxScale: 3.0,
+                                            child: ProductImageWidget(
+                                                productModel:
+                                                    productProvider.product),
+                                          ),
                                           const SizedBox(
                                               height:
                                                   Dimensions.paddingSizeSmall),
