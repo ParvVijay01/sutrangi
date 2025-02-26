@@ -67,7 +67,7 @@ class _NewArrivalWidgetState extends State<NewArrivalWidget> {
                         ),
                         const SizedBox(height: Dimensions.paddingSizeDefault),
                         SizedBox(
-                          height: 170,
+                          height: 250,
                           child: ListView.builder(
                             physics: const ClampingScrollPhysics(),
                             controller: scrollController,
@@ -84,7 +84,7 @@ class _NewArrivalWidgetState extends State<NewArrivalWidget> {
                                     width: ResponsiveHelper.isDesktop(context)
                                         ? 380
                                         : MediaQuery.of(context).size.width *
-                                            0.85,
+                                            0.25,
                                     height: 170,
                                     child: const Padding(
                                       padding: EdgeInsets.symmetric(
@@ -115,9 +115,9 @@ class _NewArrivalWidgetState extends State<NewArrivalWidget> {
                                           : Dimensions.paddingSizeExtraSmall,
                                     ),
                                     width: ResponsiveHelper.isDesktop(context)
-                                        ? 360
+                                        ? 200
                                         : MediaQuery.of(context).size.width *
-                                            0.85,
+                                            0.5,
                                     height: 170,
                                     child: ProductCardWidget(
                                       product: productProvider

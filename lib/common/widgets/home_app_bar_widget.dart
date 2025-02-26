@@ -29,36 +29,32 @@ class HomeAppBarWidget extends StatelessWidget {
       automaticallyImplyLeading: false,
       backgroundColor: Theme.of(context).cardColor,
       pinned: ResponsiveHelper.isTab(context) ? true : false,
-      leading: ResponsiveHelper.isTab(context) ? IconButton(
-        onPressed: () => drawerGlobalKey.currentState!.openDrawer(),
-        icon: const Icon(Icons.menu,color: Colors.black),
-      ): null,
-      title: Consumer<SplashProvider>(builder:(context, splash, child) => Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const CustomAssetImageWidget(Images.logo, width: 40, height: 40),
-          const SizedBox(width: 10),
-
-          Expanded(
-            child: Text(AppConstants.appName,
-              style: rubikBold.copyWith(color: Theme.of(context).primaryColor),
-              maxLines: 1, overflow: TextOverflow.ellipsis,
-            ),
-          ),
-        ],
-      )),
+      leading: ResponsiveHelper.isTab(context)
+          ? IconButton(
+              onPressed: () => drawerGlobalKey.currentState!.openDrawer(),
+              icon: const Icon(Icons.menu, color: Colors.black),
+            )
+          : null,
+      title: Consumer<SplashProvider>(
+          builder: (context, splash, child) => Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const CustomAssetImageWidget(Images.logo,
+                      width: 100, height: 130),
+                  const SizedBox(width: 10),
+                ],
+              )),
       actions: [
-
         InkWell(
           borderRadius: BorderRadius.circular(50),
           hoverColor: Colors.transparent,
-          onTap: () => RouteHelper.getCouponRoute(context, action: RouteAction.push),
+          onTap: () =>
+              RouteHelper.getCouponRoute(context, action: RouteAction.push),
           child: Container(
             decoration: BoxDecoration(
               color: Theme.of(context).secondaryHeaderColor,
               shape: BoxShape.circle,
             ),
-
             child: Padding(
               padding: const EdgeInsets.all(8),
               child: Image.asset(Images.coupon, height: 16, width: 16),
@@ -66,18 +62,22 @@ class HomeAppBarWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(width: Dimensions.paddingSizeLarge),
-
         IconButton(
-          onPressed: () => RouteHelper.getNotificationRoute(context, action: RouteAction.push),
-          icon: Icon(Icons.notifications, color: Theme.of(context).focusColor, size: 30),
+          onPressed: () => RouteHelper.getNotificationRoute(context,
+              action: RouteAction.push),
+          icon: Icon(Icons.notifications,
+              color: Theme.of(context).focusColor, size: 30),
         ),
-
-        if(ResponsiveHelper.isTab(context))IconButton(
-          onPressed: () => RouteHelper.getDashboardRoute(context, 'cart', action: RouteAction.push),
-          icon: Consumer<CartProvider>(builder: (context, cartProvider, _)=> CartCountWidget(
-            count: CartHelper.getCartItemCount(cartProvider.cartList), icon: Icons.shopping_cart,
-          )),
-        ),
+        if (ResponsiveHelper.isTab(context))
+          IconButton(
+            onPressed: () => RouteHelper.getDashboardRoute(context, 'cart',
+                action: RouteAction.push),
+            icon: Consumer<CartProvider>(
+                builder: (context, cartProvider, _) => CartCountWidget(
+                      count: CartHelper.getCartItemCount(cartProvider.cartList),
+                      icon: Icons.shopping_cart,
+                    )),
+          ),
       ],
     );
   }

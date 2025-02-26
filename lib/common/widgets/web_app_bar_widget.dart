@@ -150,28 +150,27 @@ class _WebAppBarWidgetState extends State<WebAppBarWidget> {
                               child: Consumer<SplashProvider>(
                                   builder: (context, splash, child) =>
                                       Row(children: [
-                                        SizedBox(
-                                            height: 50,
-                                            width: 50,
-                                            child: CustomImageWidget(
-                                              placeholder: Images.logo,
-                                              image: splash.baseUrls != null
-                                                  ? '${splash.baseUrls!.ecommerceImageUrl}/${splash.configModel!.appLogo}'
-                                                  : '',
-                                              fit: BoxFit.cover,
-                                            )),
-                                        const SizedBox(
-                                            width: Dimensions.paddingSizeSmall),
-                                        FittedBox(
-                                          child: Text(
-                                            splash.configModel?.ecommerceName ??
-                                                AppConstants.appName,
-                                            style: rubikBold.copyWith(
-                                                fontSize: 25,
-                                                color: Theme.of(context)
-                                                    .primaryColor),
-                                          ),
+                                        CustomImageWidget(
+                                          placeholder: Images.logo,
+                                          image: splash.baseUrls != null
+                                              ? '${splash.baseUrls!.ecommerceImageUrl}/${splash.configModel!.appLogo}'
+                                              : '',
+                                          fit: BoxFit.fitHeight,
+                                          height: 150,
+                                          width: 130,
                                         ),
+                                        // const SizedBox(
+                                        //     width: Dimensions.paddingSizeSmall),
+                                        // FittedBox(
+                                        //   child: Text(
+                                        //     splash.configModel?.ecommerceName ??
+                                        //         AppConstants.appName,
+                                        //     style: rubikBold.copyWith(
+                                        //         fontSize: 25,
+                                        //         color: Theme.of(context)
+                                        //             .primaryColor),
+                                        //   ),
+                                        // ),
                                       ])),
                             ),
                             const SizedBox(width: 40),
