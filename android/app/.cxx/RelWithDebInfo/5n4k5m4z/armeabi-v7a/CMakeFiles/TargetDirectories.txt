@@ -1,0 +1,2 @@
+C:/JeeVijay/sutrangi/android/app/.cxx/RelWithDebInfo/5n4k5m4z/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/JeeVijay/sutrangi/android/app/.cxx/RelWithDebInfo/5n4k5m4z/armeabi-v7a/CMakeFiles/rebuild_cache.dir

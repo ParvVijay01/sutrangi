@@ -454,11 +454,28 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                           context, signUpModel, config)
                                       .then((status) async {
                                     if (status.isSuccess) {
-                                      RouteHelper.getMainRoute(context,
-                                          action: RouteAction
-                                              .pushNamedAndRemoveUntil);
+                                      if (mounted) {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                                'Account created successfully'),
+                                            backgroundColor: Colors.green,
+                                          ),
+                                        );
+
+                                        Future.delayed(
+                                            const Duration(seconds: 2), () {
+                                          RouteHelper.getLoginRoute(
+                                            context,
+                                            action: RouteAction
+                                                .pushNamedAndRemoveUntil,
+                                          );
+                                        });
+                                      }
                                     }
                                   });
+                                  ;
                                 }
                               },
                       );

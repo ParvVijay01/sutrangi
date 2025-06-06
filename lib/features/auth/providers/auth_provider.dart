@@ -496,10 +496,7 @@ class AuthProvider with ChangeNotifier {
     await _googleSignIn.disconnect();
   }
 
-
-
-
-
+  
 
   bool updateIsUpdateTernsStatus({bool isUpdate = true, bool? value}){
 

@@ -223,26 +223,22 @@ class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
                   color: Theme.of(context).hintColor.withOpacity(0.6)),
               filled: true,
               prefixIcon: widget.isShowPrefixIcon
-                  ? IconButton(
-                      padding: const EdgeInsets.all(0),
-                      icon: widget.prefixAssetUrl != null
-                          ? Image.asset(
-                              widget.prefixAssetUrl!,
-                              color: widget.prefixAssetImageColor ??
-                                  Theme.of(context).primaryColor,
-                              scale: 2.5,
-                            )
-                          : Icon(
-                              widget.prefixIconUrl,
-                              color: widget.prefixAssetImageColor ??
-                                  Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge
-                                      ?.color
-                                      ?.withOpacity(0.6),
-                            ),
-                      onPressed: () {},
-                    )
+                  ? widget.prefixAssetUrl != null
+                      ? Image.asset(
+                          widget.prefixAssetUrl!,
+                          color: widget.prefixAssetImageColor ??
+                              Theme.of(context).primaryColor,
+                          scale: 2.5,
+                        )
+                      : Icon(
+                          widget.prefixIconUrl,
+                          color: widget.prefixAssetImageColor ??
+                              Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge
+                                  ?.color
+                                  ?.withOpacity(0.6),
+                        )
                   : widget.countryDialCode != null
                       ? Padding(
                           padding: EdgeInsets.only(

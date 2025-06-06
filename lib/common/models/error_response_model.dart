@@ -1,25 +1,25 @@
-
 class ErrorResponseModel {
   List<Errors>? _errors;
 
   List<Errors>? get errors => _errors;
 
-  ErrorResponseModel({
-    List<Errors>? errors}){
+  ErrorResponseModel({List<Errors>? errors}) {
     _errors = errors;
   }
 
   ErrorResponseModel.fromJson(dynamic json) {
     if (json["errors"] != null) {
       _errors = [];
-      if(json['errors'] is List) {
+
+      if (json['errors'] is List) {
         json["errors"].forEach((v) {
           _errors!.add(Errors.fromJson(v));
         });
-      }else{
+      } else if (json['errors'] is Map) {
         _errors!.add(Errors.fromJson(json['errors']));
+      } else if (json['errors'] is String) {
+        _errors!.add(Errors(message: json['errors']));
       }
-
     }
   }
 
@@ -30,7 +30,6 @@ class ErrorResponseModel {
     }
     return map;
   }
-
 }
 
 /// code : "l_name"
@@ -43,9 +42,7 @@ class Errors {
   String? get code => _code;
   String? get message => _message;
 
-  Errors({
-    String? code,
-    String? message}){
+  Errors({String? code, String? message}) {
     _code = code;
     _message = message;
   }
@@ -61,5 +58,4 @@ class Errors {
     map["message"] = _message;
     return map;
   }
-
 }

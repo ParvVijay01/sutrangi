@@ -295,12 +295,13 @@ class ProductImageView extends StatelessWidget {
                   )
                 ]),
             child: Stack(children: [
-              CustomImageWidget(
-                image:
-                    '${splashProvider.baseUrls!.productImageUrl}/${product.image![0]}',
-                width: isVertical ? 350 : 150,
-                fit: BoxFit.cover,
-                height: 160,
+              AspectRatio(
+                aspectRatio: 1,
+                child: CustomImageWidget(
+                  image:
+                      '${splashProvider.baseUrls!.productImageUrl}/${product.image![0]}',
+                  fit: BoxFit.contain,
+                ),
               ),
               if (isVertical)
                 Positioned.fill(
@@ -482,6 +483,7 @@ class _PriceView extends StatelessWidget {
                       )),
                 )
               : const SizedBox(),
+          SizedBox(width: 10),
           Flexible(
             child: FittedBox(
                 child: CustomDirectionalityWidget(

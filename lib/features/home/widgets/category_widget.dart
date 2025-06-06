@@ -51,7 +51,7 @@ class CategoryWidget extends StatelessWidget {
                       : Row(children: [
                           Expanded(
                             child: SizedBox(
-                              height: 90,
+                              height: 110,
                               child: category.categoryList != null
                                   ? category.categoryList!.isNotEmpty
                                       ? ListView.builder(
